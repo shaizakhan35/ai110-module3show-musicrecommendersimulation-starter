@@ -41,8 +41,7 @@ UserProfile stores:
 - preferred genre, mood, energy, and valence
 
 Scoring formula:
-
-  Score = 0.35 · genre_match + 0.25 · mood_match
+      Score = 0.35 · genre_match + 0.25 · mood_match
         + 0.20 · energy_proximity + 0.20 · valence_proximity
 
 How songs are chosen:
