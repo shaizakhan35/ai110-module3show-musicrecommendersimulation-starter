@@ -85,8 +85,8 @@ def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
     score = 0.0
 
     if song.get("genre") == preferred_genre:
-        score += 2.0
-        reasons.append(f"genre match: {song.get('genre')} (+2.0)")
+        score += 1.0
+        reasons.append(f"genre match: {song.get('genre')} (+1.0)")
     else:
         reasons.append(
             f"genre mismatch: {song.get('genre')} vs {preferred_genre} (0.0)"
@@ -102,8 +102,8 @@ def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
 
     if preferred_energy is not None and song.get("energy") is not None:
         energy_proximity = 1 - abs(float(preferred_energy) - float(song["energy"]))
-        score += energy_proximity
-        reasons.append(f"energy proximity: {energy_proximity:.2f} (+{energy_proximity:.2f})")
+        score += (energy_proximity * 2.0)
+        reasons.append(f"energy proximity: {energy_proximity:.2f} (+{(energy_proximity * 2.0):.2f})")
 
     if preferred_valence is not None and song.get("valence") is not None:
         valence_proximity = 1 - abs(float(preferred_valence) - float(song["valence"]))

@@ -70,6 +70,9 @@ Prompts:
 - Cases where the system overfits to one preference  
 - Ways the scoring might unintentionally favor some users  
 
+The system over-prioritizes genre because it carries a weight of 2.0 out of a maximum score of 5.5, which is strong enough to 
+override mood and valence entirely. During testing, a user who 
+wanted sad music received Gym Hero, a high-energy happy pop song, as the top recommendation simply because the genre matched. The catalog is also uneven; genres like rock and classical only have one song each, so users with niche tastes get very limited options, while users with missing genres like salsa never receive the genre bonus at all. The system also ignores tempo, and acousticness and has no way to handle conflicting preferences, lyrics or  cultural context.
 ---
 
 ## 7. Evaluation  
@@ -85,6 +88,9 @@ Prompts:
 
 No need for numeric metrics unless you created some.
 
+
+I tested four user profiles: a default pop/happy profile, a 
+conflicting pop/sad profile, a missing genre profile using salsa, and an indecisive profile with no genre or mood specified. For each one I checked whether the top results felt emotionally correct and whether the reason strings explained the ranking clearly. The default profile worked well and matched my intuition, but the most surprising result was that a user who asked for sad music received Gym Hero, a high-energy happy pop song, as the top recommendation simply because the genre matched. I also ran a weight shift experiment where I lowered the genre weight from 2.0 to 1.0 and doubled the energy weight, which caused Midnight Skyline, a sad hip hop song, to jump from #3 to #1 for the same profile, proving that the weights have a big impact on what the system thinks is a good recommendation.
 ---
 
 ## 8. Future Work  
