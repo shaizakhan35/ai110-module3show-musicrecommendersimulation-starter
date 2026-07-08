@@ -9,24 +9,41 @@ You will implement the functions in recommender.py:
 - recommend_songs
 """
 
-from recommender import load_songs, recommend_songs
+try:
+    # package-relative import when run as module: python -m src.main
+    from .recommender import load_songs, recommend_songs
+except Exception:
+    # fallback for script execution: python src/main.py
+    from recommender import load_songs, recommend_songs
 
 
 def main() -> None:
-    songs = load_songs("data/songs.csv") 
+    songs = load_songs("data/songs.csv")
+    print(f"Loaded songs: {len(songs)}")
 
-    # Starter example profile
-    user_prefs = {"genre": "pop", "mood": "happy", "energy": 0.8}
+    user_prefs = {
+        "preferred_genre": "pop",
+        "preferred_mood": "happy",
+        "preferred_energy": 0.8,
+        "preferred_valence": 0.8,
+    }
 
     recommendations = recommend_songs(user_prefs, songs, k=5)
 
-    print("\nTop recommendations:\n")
-    for rec in recommendations:
-        # You decide the structure of each returned item.
-        # A common pattern is: (song, score, explanation)
-        song, score, explanation = rec
-        print(f"{song['title']} - Score: {score:.2f}")
-        print(f"Because: {explanation}")
+    # Print user profile for clarity
+    print(f"User profile: genre={user_prefs['preferred_genre']}, mood={user_prefs['preferred_mood']}, energy={user_prefs['preferred_energy']}, valence={user_prefs['preferred_valence']}")
+
+    print("\n🎵 Top 5 Recommendations")
+    print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+    for index, rec in enumerate(recommendations, start=1):
+        song = rec["song"]
+        score = rec["score"]
+        reasons = rec["reasons"]
+
+        print(f"#{index} {song['title']} — {song['artist']}")
+        print(f"    Score: {score:.1f} / 5.5")
+        for reason in reasons:
+            print(f"    ✔ {reason}")
         print()
 
 
