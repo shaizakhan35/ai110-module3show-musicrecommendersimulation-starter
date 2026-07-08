@@ -29,6 +29,25 @@ Some prompts to answer:
 
 You can include a simple diagram or bullet list if helpful.
 
+My recommender compares each song's attributes to the user's taste profile and scores them. The highest scoring songs get recommended.
+
+Song features:
+- 'genre' - style of music (pop, lofi, rock, jazz)
+- 'mood' - emotional feel (happy, chill, intense, moody)
+- 'energy' - calm to intense (0.0 to 1.0)
+- 'valence' - dark to positive (0.0 to 1.0)
+
+UserProfile stores:
+- preferred genre, mood, energy, and valence
+
+Scoring formula:
+
+  Score = 0.35 · genre_match + 0.25 · mood_match
+        + 0.20 · energy_proximity + 0.20 · valence_proximity
+
+How songs are chosen:
+All songs are scored, sorted highest to lowest to maintain order and the top matches are returned.
+
 ---
 
 ## Getting Started
