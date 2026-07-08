@@ -106,9 +106,8 @@ Paste a sample of your recommender's output here as a text block so a reader can
 #   3. ...
 ```
 Loaded songs: 20
-User profile: genre=pop, mood=happy, energy=0.8, valence=0.8
 
-🎵 Top 5 Recommendations
+Top 5 Recommendations
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 #1 Sunrise City — Neon Echo
     Score: 5.4 / 5.5
@@ -116,34 +115,19 @@ User profile: genre=pop, mood=happy, energy=0.8, valence=0.8
     ✔ mood match: happy (+1.5)
     ✔ energy proximity: 0.98 (+0.98)
     ✔ valence proximity: 0.96 (+0.96)
-
 #2 Gym Hero — Max Pulse
     Score: 3.8 / 5.5
     ✔ genre match: pop (+2.0)
     ✔ mood mismatch: intense vs happy (0.0)
     ✔ energy proximity: 0.87 (+0.87)
     ✔ valence proximity: 0.97 (+0.97)
-
 #3 Rooftop Lights — Indigo Parade
     Score: 3.5 / 5.5
     ✔ genre mismatch: indie pop vs pop (0.0)
     ✔ mood match: happy (+1.5)
     ✔ energy proximity: 0.96 (+0.96)
     ✔ valence proximity: 0.99 (+0.99)
-
 #4 Golden Highway — Maple Ridge
-    Score: 1.9 / 5.5
-    ✔ genre mismatch: country vs pop (0.0)
-    ✔ mood mismatch: romantic vs happy (0.0)
-    ✔ energy proximity: 0.91 (+0.91)
-    ✔ valence proximity: 0.97 (+0.97)
-
-#5 Neon Tides — Pixel Harbor
-    Score: 1.8 / 5.5
-    ✔ genre mismatch: electronic vs pop (0.0)
-    ✔ mood mismatch: energetic vs happy (0.0)
-    ✔ energy proximity: 0.92 (+0.92)
-    ✔ valence proximity: 0.92 (+0.92)
    
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or demo video link here -->
