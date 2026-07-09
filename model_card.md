@@ -6,6 +6,7 @@ Give your model a short, descriptive name.
 Example: **VibeFinder 1.0**  
 
 MoodTunes 1.0
+
 ---
 
 ## 2. Intended Use  
@@ -65,6 +66,7 @@ happy, chill, intense, sad, romantic, and melancholic. The data
 was created manually for this simulation and does not reflect
 real listening data. Some genres like jazz and classical only
 have one song each.
+
 ---
 
 ## 5. Strengths  
@@ -82,6 +84,7 @@ are both in the catalog. A lofi/chill user received Midnight
 Coding as the top result with a score of 5.44, which felt
 accurate. The reason strings also make every recommendation
 transparent and easy to understand.
+
 ---
 
 ## 6. Limitations and Bias 
@@ -118,6 +121,7 @@ No need for numeric metrics unless you created some.
 
 I tested four user profiles: a default pop/happy profile, a 
 conflicting pop/sad profile, a missing genre profile using salsa, and an indecisive profile with no genre or mood specified. For each one I checked whether the top results felt emotionally correct and whether the reason strings explained the ranking clearly. The default profile worked well and matched my intuition, but the most surprising result was that a user who asked for sad music received Gym Hero, a high-energy happy pop song, as the top recommendation simply because the genre matched. I also ran a weight shift experiment where I lowered the genre weight from 2.0 to 1.0 and doubled the energy weight, which caused Midnight Skyline, a sad hip hop song, to jump from 3 to 1 for the same profile, proving that the weights have a big impact on what the system thinks is a good recommendation.
+
 ---
 
 ## 8. Future Work  
@@ -135,6 +139,7 @@ Prompts:
 users liked. 
 -Allow users to specify more than one genre or mood.
 -Add more songs per genre so niche users get better variety.
+
 ---
 
 ## 9. Personal Reflection  
