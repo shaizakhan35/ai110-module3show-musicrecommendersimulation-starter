@@ -5,6 +5,7 @@
 Give your model a short, descriptive name.  
 Example: **VibeFinder 1.0**  
 
+MoodTunes 1.0
 ---
 
 ## 2. Intended Use  
@@ -16,6 +17,12 @@ Prompts:
 - What kind of recommendations does it generate  
 - What assumptions does it make about the user  
 - Is this for real users or classroom exploration  
+
+MoodTunes 1.0 is designed for classroom exploration of how content-based music recommenders work. It generates song
+recommendations based on a user's preferred genre, mood,
+energy level, and valence. It assumes the user has one
+clear genre and mood preference. This is not built for
+real users or real platforms, it is a learning simulation.
 
 ---
 
@@ -32,6 +39,13 @@ Prompts:
 
 Avoid code here. Pretend you are explaining the idea to a friend who does not program.
 
+Each song gets a score based on how well it matches the user.
+Genre and mood are either a match or not; genre is worth 2.0
+points and mood is worth 1.5 points. Energy and valence use
+proximity scoring, meaning a song closer to the user's preferred
+level scores higher. All songs are scored, sorted from highest
+to lowest and the top 5 are returned. The maximum score is 5.5.
+
 ---
 
 ## 4. Data  
@@ -45,6 +59,12 @@ Prompts:
 - Did you add or remove data  
 - Are there parts of musical taste missing in the dataset  
 
+The catalog has 20 songs across 11 genres including pop, lofi,
+rock, jazz, metal, R&B, country, and classical. Moods include
+happy, chill, intense, sad, romantic, and melancholic. The data
+was created manually for this simulation and does not reflect
+real listening data. Some genres like jazz and classical only
+have one song each.
 ---
 
 ## 5. Strengths  
@@ -57,6 +77,11 @@ Prompts:
 - Any patterns you think your scoring captures correctly  
 - Cases where the recommendations matched your intuition  
 
+The system works well for users whose preferred genre and mood
+are both in the catalog. A lofi/chill user received Midnight
+Coding as the top result with a score of 5.44, which felt
+accurate. The reason strings also make every recommendation
+transparent and easy to understand.
 ---
 
 ## 6. Limitations and Bias 
@@ -104,6 +129,10 @@ Prompts:
 - Improving diversity among the top results  
 - Handling more complex user tastes  
 
+-Add collaborative filtering to recommend based on what similar
+users liked. 
+-Allow users to specify more than one genre or mood.
+-Add more songs per genre so niche users get better variety.
 ---
 
 ## 9. Personal Reflection  
@@ -115,3 +144,30 @@ Prompts:
 - What you learned about recommender systems  
 - Something unexpected or interesting you discovered  
 - How this changed the way you think about music recommendation apps  
+
+Building this taught me that recommendation systems are not just
+about matching data but the weights behind the scoring matter a
+lot. I was surprised that a 2.0 genre weight could completely
+override what a user actually asked for emotionally. It made me
+think differently about how apps like Spotify might be making
+similar tradeoffs behind the scenes without users knowing.
+
+## 9. Personal Reflection
+
+I did not expect to care this much about a music recommender.
+The moment that hit me hardest was when a user who asked for
+sad music got a gym workout song back. That was my biggest
+learning moment. Algorithms do not feel anything, they just
+follow numbers. Using AI tools helped me move faster, but I
+still had to stop and check if I actually understood what was
+being generated. The AI gave me formulas and code, but it could
+not tell me whether the weights made sense for my data. That
+part I had to figure out myself.
+
+What surprised me most is how something so simple can actually
+feel like it knows you. When Midnight Coding showed up as the
+top result for a chill lofi user, it genuinely felt right. I
+did not expect a math formula to produce something that felt
+human. If I kept going, I would make it learn from real people
+and add mood detection so the system could ask how you are
+feeling today instead of always assuming the same preference.
