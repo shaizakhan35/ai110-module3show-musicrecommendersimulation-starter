@@ -113,7 +113,6 @@ Prompts:
 
 No need for numeric metrics unless you created some.
 
-
 I tested four user profiles: a default pop/happy profile, a 
 conflicting pop/sad profile, a missing genre profile using salsa, and an indecisive profile with no genre or mood specified. For each one I checked whether the top results felt emotionally correct and whether the reason strings explained the ranking clearly. The default profile worked well and matched my intuition, but the most surprising result was that a user who asked for sad music received Gym Hero, a high-energy happy pop song, as the top recommendation simply because the genre matched. I also ran a weight shift experiment where I lowered the genre weight from 2.0 to 1.0 and doubled the energy weight, which caused Midnight Skyline, a sad hip hop song, to jump from #3 to #1 for the same profile, proving that the weights have a big impact on what the system thinks is a good recommendation.
 ---
@@ -144,15 +143,6 @@ Prompts:
 - What you learned about recommender systems  
 - Something unexpected or interesting you discovered  
 - How this changed the way you think about music recommendation apps  
-
-Building this taught me that recommendation systems are not just
-about matching data but the weights behind the scoring matter a
-lot. I was surprised that a 2.0 genre weight could completely
-override what a user actually asked for emotionally. It made me
-think differently about how apps like Spotify might be making
-similar tradeoffs behind the scenes without users knowing.
-
-## 9. Personal Reflection
 
 I did not expect to care this much about a music recommender.
 The moment that hit me hardest was when a user who asked for
